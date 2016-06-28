@@ -9,7 +9,7 @@
     - "php70-php"
   yum:
     name: "{{ item }}"
-    state: present
+    state: absent
 
 - name: "Install php70 packages"
   with_items:
