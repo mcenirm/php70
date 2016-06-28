@@ -1,0 +1,17 @@
+---
+- name: "Enable Remi repo"
+  yum:
+    name: "{{ remi_repo_rpm_url }}"
+    state: present
+
+- name: "Install php70 packages"
+  with_items:
+    - "php70"
+    - "php70-build"
+    - "php70-php"
+    - "php70-php-devel"
+    - "php70-php-mysqlnd"
+    - "php70-php-pgsql"
+  yum:
+    name: "{{ item }}"
+    state: present
