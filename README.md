@@ -13,6 +13,7 @@ Role Variables
 
 | Variable Name             | Description              | Default                      |
 | ------------------------- | ------------------------ | ---------------------------- |
+| `require_httpd_package`   | Require httpd package?   | `true`                       |
 | `httpd_php_conf_copy`     | Enable proxy to php-fpm? | `true`                       |
 | `httpd_php_conf_dest`     | Config file location     | `/etc/httpd/conf.d/php.conf` |
 | `httpd_php_conf_owner`    |  ... owner               | `root`                       |

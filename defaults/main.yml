@@ -1,6 +1,8 @@
 ---
 remi_repo_rpm_url: "http://rpms.famillecollet.com/enterprise/7/safe/x86_64/remi-release-7.1-3.el7.remi.noarch.rpm"
 
+require_httpd_package: true
+
 httpd_php_conf_copy:    true
 httpd_php_conf_dest:    "/etc/httpd/conf.d/php.conf"
 httpd_php_conf_owner:   "root"
