@@ -22,3 +22,21 @@
   yum:
     name: "{{ item }}"
     state: present
+
+- name: "Add missing httpd configuration file"
+  copy:
+    dest: "{{ httpd_php_conf_dest }}"
+    src: "httpd-php.conf"
+    owner: "{{ httpd_php_conf_owner }}"
+    group: "{{ httpd_php_conf_group }}"
+    mode: "{{ httpd_php_conf_mode }}"
+    seuser: "{{ httpd_php_conf_seuser | default(omit) }}"
+    serole: "{{ httpd_php_conf_serole | default(omit) }}"
+    setype: "{{ httpd_php_conf_setype | default(omit) }}"
+    selevel: "{{ httpd_php_conf_selevel | default(omit) }}"
+
+- name: "Enable php-fpm service"
+  service:
+    name: "php70-php-fpm"
+    state: "{{ php_fpm_service_state }}"
+    enabled: "{{ php_fpm_service_enabled }}"
