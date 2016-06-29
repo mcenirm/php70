@@ -34,6 +34,7 @@
     serole: "{{ httpd_php_conf_serole | default(omit) }}"
     setype: "{{ httpd_php_conf_setype | default(omit) }}"
     selevel: "{{ httpd_php_conf_selevel | default(omit) }}"
+  when: httpd_php_conf_copy
 
 - name: "Enable php-fpm service"
   service:

@@ -13,6 +13,7 @@ Role Variables
 
 | Variable Name             | Description              | Default                      |
 | ------------------------- | ------------------------ | ---------------------------- |
+| `httpd_php_conf_copy`     | Enable proxy to php-fpm? | `true`                       |
 | `httpd_php_conf_dest`     | Config file location     | `/etc/httpd/conf.d/php.conf` |
 | `httpd_php_conf_owner`    |  ... owner               | `root`                       |
 | `httpd_php_conf_group`    |  ... group               | `root`                       |
